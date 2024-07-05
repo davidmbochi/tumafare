@@ -13,3 +13,12 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  mailing:
+    frontend:
+      activation-url: http://localhost:8080/auth/activate
+
+  password:
+    change:
+      change-password-url: http://localhost:8080/password/change
