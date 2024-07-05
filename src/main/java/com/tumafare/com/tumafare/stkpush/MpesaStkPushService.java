@@ -41,6 +41,8 @@ public class MpesaStkPushService {
 
         String invoiceId = response.getInvoice().getInvoiceId();
 
+        Thread.sleep(1000);
+
         MpesaStkPushStatusResponse statusResponse =
                 mpesaStkPushStatusHandler.mpesaStkPushStatus(invoiceId);
 
