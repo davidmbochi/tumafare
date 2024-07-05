@@ -24,6 +24,9 @@
 
 .dashboard{
     margin-top: 10%;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .mpesa-payment-image{
@@ -35,4 +38,9 @@
 
 img{
     width: 100%;
+}
+
+.table-responsive{
+    width: 100%;
+    overflow-x: auto;
 }
