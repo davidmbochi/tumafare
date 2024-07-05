@@ -14,6 +14,8 @@
     <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin}" class="btn btn-primary">Admin</a>
 
     <a th:href="@{/mpesa/initiate-mpesa}" class="btn btn-primary">Send money</a>
+
+    <a th:href="@{/logout}" class="btn btn-primary">Logout</a>
 </div>
 <div class="container card dashboard">
     <h3 class="text-center">Transactions</h3>
