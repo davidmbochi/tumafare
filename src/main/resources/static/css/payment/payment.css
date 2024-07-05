@@ -1,0 +1,26 @@
+.payment-container{
+    width: 800px !important;
+    margin-top: 10%;
+}
+
+.payment-dashboard{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.dashboard{
+    margin-top: 10%;
+}
+
+.mpesa-payment-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+
+img{
+    width: 100%;
+}

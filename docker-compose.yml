@@ -1,0 +1,18 @@
+services:
+  postgres:
+    container_name: tumafare-database
+    image: postgres
+    environment:
+      POSTGRES_USER: tumafare
+      POSTGRES_PASSWORD: tumafare
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: tumafare
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+volumes:
+  postgres:
+    driver: local

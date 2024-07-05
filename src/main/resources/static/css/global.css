@@ -1,0 +1,8 @@
+.my-container{
+    width: 800px !important;
+    margin-top: 15%;
+}
+
+.exception-error{
+    color: red;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-5.1.3-dist/css/bootstrap.css}" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/payment/payment.css}" >
+</head>
+<body>
+<div class="container payment-dashboard">
+    <a th:href="@{/}" class="btn btn-primary">Home</a>
+    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin}" class="btn btn-primary">Admin</a>
+
+    <a th:href="@{/mpesa/dashboard}" class="btn btn-primary">Dashboard</a>
+</div>
+<div class="container card payment-container">
+    <h3 class="text-center">Send money</h3>
+    <div class="mpesa-payment-image">
+        <img th:src="@{/images/mpesa.png}" class="card-img-top" alt="...">
+
+    </div>
+    <p class="text-warning"> Don't close this window after clicking the Send button</p>
+    <hr>
+    <form th:action="@{/mpesa/process-mpesa}" th:object="${stkRequest}" method="post">
+        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger" role="alert">
+            <ul>
+                <li th:each="err : ${#fields.allErrors()}" th:text="${err}"></li>
+            </ul>
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount (transaction fees exclusive)</label>
+            <input th:field="*{amount}" type="number" class="form-control" id="amount" placeholder="100">
+        </div>
+        <div class="mb-3">
+            <label for="userPhoneNumber" class="form-label">Your Mpesa Number</label>
+            <input th:field="*{userPhoneNumber}" type="text" class="form-control" id="userPhoneNumber" placeholder="25472000000">
+        </div>
+        <div class="mb-3">
+            <label for="clientPhoneNumber" class="form-label">Client Mpesa Number</label>
+            <input th:field="*{clientPhoneNumber}" type="text" class="form-control" id="clientPhoneNumber" placeholder="25472000000">
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <button type="submit" class="btn btn-primary">
+                <em class="fas fa-sign-in-alt">&nbsp;Send</em>
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

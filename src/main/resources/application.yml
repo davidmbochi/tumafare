@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: tumafare
+  profiles:
+    active: dev
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: tumafareinfo@gmail.com
+    password: elnycxurykidupel
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            trust: "*"
+        starttls:
+          enable: true
+    protocol: smtp
+
+application:
+  mailing:
+    frontend:
+      activation-url: http://localhost:8080/auth/activate
+
+  password:
+    change:
+      change-password-url: http://localhost:8080/password/change
+
+instasend:
+  mpesa:
+    api-secret: ISSecretKey_live_76efbd91-964e-423d-b54c-febfd46e663b
+
+movesms:
+  sms:
+    api_key: 6tSWjohsr5Eyfd0vJk9DfqsT6RJbyvUUnGQOyFwWAcBQrp2ZIr
+
+africastalking:
+  sms:
+    api_key: atsk_1b3457ae6c87c7a8e20aa86f236a94a14bf7f4319e690edfeeff8f27b35e583f872053b6

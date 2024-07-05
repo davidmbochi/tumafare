@@ -1,0 +1,13 @@
+
+.auth-container{
+    width: 800px !important;
+    margin-top: 15%;
+}
+
+.auth-home{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
