@@ -43,6 +43,10 @@ public class AuthenticationService {
                 .enabled(false)
                 .roles(List.of(userRole))
                 .build();
+
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            throw new RuntimeException("User with email " + user.getEmail() + " already exists");
+        }
         userRepository.save(user);
 
         sendValidationEmail(user);

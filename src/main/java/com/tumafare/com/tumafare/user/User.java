@@ -33,6 +33,8 @@ public class User implements UserDetails , Principal {
     private Integer id;
     private String firstname;
     private String lastname;
+
+    @Column(unique = true)
     private String email;
     private String password;
     private boolean accountLocked;
