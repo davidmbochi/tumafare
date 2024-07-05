@@ -13,12 +13,3 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-application:
-  mailing:
-    frontend:
-      activation-url: https://tumafare.com/auth/activate
-
-  password:
-    change:
-      change-password-url: https://tumafare.com/password/change
