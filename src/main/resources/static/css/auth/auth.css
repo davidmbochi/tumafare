@@ -1,7 +1,10 @@
 
 .auth-container{
-    width: 800px !important;
-    margin-top: 15%;
+    max-width: 800px; /* Set the maximum width */
+    width: 100%; /* Make it take full width up to the max-width */
+    margin-top: 10%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for better appearance */
 }
 
 .auth-home{
