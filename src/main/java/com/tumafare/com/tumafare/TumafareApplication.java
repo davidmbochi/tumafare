@@ -47,7 +47,10 @@ public class TumafareApplication {
 							roleRepository.findByName("ADMIN").get()))
 					.build();
 
-			userRepository.save(admin);
+			if (userRepository.findByEmail("davidmbochinjonge@gmail.com").isEmpty()){
+				userRepository.save(admin);
+			}
+
 		};
 	}
 
