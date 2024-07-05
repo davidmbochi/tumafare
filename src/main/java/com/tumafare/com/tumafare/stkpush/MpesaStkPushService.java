@@ -142,7 +142,9 @@ public class MpesaStkPushService {
     }
 
     public void deletePayment(Integer paymentId) {
-        repository.deleteById(paymentId);
+        MpesaStkPush stkPush = repository.findById(paymentId)
+                .orElseThrow(() -> new RuntimeException("Payment not found"));
+        repository.deleteById(stkPush.getId());
     }
 
     public void approveDisbursement(Integer paymentId) {
