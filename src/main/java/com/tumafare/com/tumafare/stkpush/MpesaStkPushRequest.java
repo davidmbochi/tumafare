@@ -14,7 +14,7 @@ import lombok.*;
 public class MpesaStkPushRequest {
       @NotBlank(message = "Amount cannot be empty")
       @NotEmpty(message = "Amount is required")
-      @Min(value = 15, message = "Enter a value greater or equal to 15")
+      @Min(value = 30, message = "Enter a value greater or equal to 30")
       @Max(value = 150000, message = "Enter a value less than 150,000")
       String amount;
 
