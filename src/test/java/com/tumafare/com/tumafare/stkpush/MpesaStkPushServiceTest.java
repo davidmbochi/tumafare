@@ -34,11 +34,9 @@ class MpesaStkPushServiceTest {
     public void testAfricasTalkingSms() throws IOException {
         String helloSafaricom = africasTalkingSmsService.sendSms("254743164072", "Hello Safaricom");
         assertNotNull(helloSafaricom);
-        System.out.println(helloSafaricom);
 
         String helloAirtel = africasTalkingSmsService.sendSms("254737610119", "Hello Airtel");
         assertNotNull(helloAirtel);
-        System.out.println(helloAirtel);
     }
     @Test
     public void testRandomTextGen() {
