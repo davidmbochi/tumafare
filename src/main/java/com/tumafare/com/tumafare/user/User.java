@@ -38,7 +38,7 @@ public class User implements UserDetails , Principal {
     private boolean accountLocked;
     private boolean enabled;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private List<Role> roles;
 
     @OneToMany(mappedBy = "owner",
