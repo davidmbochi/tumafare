@@ -37,6 +37,10 @@ public class MpesaStkPushService {
             MpesaStkPushRequest mpesaStkPushRequest,
             Authentication connectedUser) throws InterruptedException {
 
+        if (mpesaStkPushRequest.getUserPhoneNumber().equals(mpesaStkPushRequest.getClientPhoneNumber())){
+            throw new RuntimeException("You cannot send to yourself");
+        }
+
         MpesaStkPushResponse response = mpesaStkPushHandler.makePayment(mpesaStkPushRequest);
 
         String invoiceId = response.getInvoice().getInvoiceId();
