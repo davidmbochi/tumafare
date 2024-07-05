@@ -27,7 +27,7 @@ class MpesaStkPushServiceTest {
     @Test
     public void testSmsService(){
         String amount = "500";
-        assertNotNull(moveSmsService.sendSMS("254737610119", "Test message "+amount+"You should  receive it on your M-pesa on approval"));
+        assertNotNull(moveSmsService.sendSMS("254737610119", "Test message "+amount+"You should  receive it in your M-pesa on approval"));
     }
 
     @Test
