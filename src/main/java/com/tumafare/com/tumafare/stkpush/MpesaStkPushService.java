@@ -108,7 +108,7 @@ public class MpesaStkPushService {
         String userMessage = stringService.generateUniqueSmsID()+
                 " Confirmed. We have received KES "
                 + statusResponse.getInvoice().getValue()+" to "
-                + mpesaStkPush.getClientPhoneNumber() +". Approve the payment now";
+                + mpesaStkPush.getClientPhoneNumber() +". Approve the payment on your account dashboard";
         moveSmsService.sendSMS(mpesaStkPush.getUserPhoneNumber(), userMessage);
 
         String clientMessage = stringService.generateUniqueSmsID()+ " Confirmed. You have received KES "
