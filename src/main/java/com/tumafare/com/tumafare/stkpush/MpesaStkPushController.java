@@ -1,5 +1,6 @@
 package com.tumafare.com.tumafare.stkpush;
 
+import com.tumafare.com.tumafare.role.Role;
 import com.tumafare.com.tumafare.stkpush.stkpushstatus.MpesaStkPushStatusResponse;
 import com.tumafare.com.tumafare.user.User;
 import jakarta.validation.Valid;
@@ -10,7 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("mpesa")
@@ -47,7 +51,12 @@ public class MpesaStkPushController {
         User user = ((User) connectedUser.getPrincipal());
         List<MpesaStkPush> payments = mpesaStkPushService.getPaymentsByUserId(user.getId());
         model.addAttribute("payments", payments);
-        return "mpesa/mpesa-dashboard";
+        model.addAttribute("username", user.getFirstname()+" "+user.getLastname());
+        Role userRole = user.getRoles().stream()
+                .min(Comparator.comparing(Role::getName))
+                .get();
+        model.addAttribute("role", userRole.getName());
+        return "dashboard/user-dashboard";
     }
 
     @GetMapping("/approve-mpesa/{paymentId}")

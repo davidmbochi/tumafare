@@ -25,6 +25,7 @@ public class SecurityConfig {
                 req
                     .requestMatchers("/").permitAll()
                     .requestMatchers("/home/**").permitAll()
+                    .requestMatchers("/dashboard/**").permitAll()
                     .requestMatchers("/auth/**").permitAll()
                     .requestMatchers("/css/**").permitAll()
                     .requestMatchers("/images/**").permitAll()
