@@ -10,7 +10,7 @@
 <body>
 <div class="container payment-dashboard">
     <a th:href="@{/}" class="btn btn-primary">Home</a>
-    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin}" class="btn btn-primary">Admin</a>
+    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/dashboard}" class="btn btn-primary">Admin</a>
 
     <a th:href="@{/mpesa/dashboard}" class="btn btn-primary">Dashboard</a>
 
