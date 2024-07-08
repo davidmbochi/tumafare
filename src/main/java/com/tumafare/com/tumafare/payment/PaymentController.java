@@ -32,4 +32,10 @@ public class PaymentController {
         paymentService.completeDisbursement(stkPush);
         return "redirect:/admin/dashboard";
     }
+
+    @GetMapping("/delete-mpesa/{paymentId}")
+    public String deletePayment(@PathVariable("paymentId") Integer paymentId) {
+        mpesaStkPushService.deletePayment(paymentId);
+        return "redirect:/admin/dashboard";
+    }
 }
