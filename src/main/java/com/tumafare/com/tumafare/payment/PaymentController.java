@@ -21,7 +21,7 @@ public class PaymentController {
     public String completeDisbursement(@PathVariable("paymentId") Integer paymentId) throws InterruptedException {
         MpesaStkPush stkPush = mpesaStkPushService.findById(paymentId);
         paymentService.completeDisbursement(stkPush);
-        return "redirect:/admin";
+        return "redirect:/admin/dashboard";
     }
 
     @GetMapping("/reverse-payment/{paymentId}")
@@ -30,6 +30,6 @@ public class PaymentController {
         stkPush.setClientPhoneNumber(stkPush.getUserPhoneNumber());
         stkPush.setPaymentStatus(REVERSED.getStatus());
         paymentService.completeDisbursement(stkPush);
-        return "redirect:/admin";
+        return "redirect:/admin/dashboard";
     }
 }
