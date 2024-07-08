@@ -83,7 +83,7 @@ public class MpesaStkPushService {
     }
 
     private String calculateAmount(MpesaStkPush mpesaStkPush, MpesaStkPushStatusResponse statusResponse) {
-        BigDecimal percentage = new BigDecimal("0.2");
+        BigDecimal percentage = new BigDecimal("0.05");
         BigDecimal transFee = percentage.multiply(new BigDecimal(mpesaStkPush.getAmount()));
 
         BigDecimal initialAmount = new BigDecimal(mpesaStkPush.getAmount());
@@ -94,7 +94,7 @@ public class MpesaStkPushService {
     }
 
     private String calculateSales(MpesaStkPush mpesaStkPush, MpesaStkPushStatusResponse statusResponse) {
-        BigDecimal percentage = new BigDecimal("0.2");
+        BigDecimal percentage = new BigDecimal("0.05");
         BigDecimal transFee = percentage.multiply(new BigDecimal(mpesaStkPush.getAmount()));
 
         BigDecimal initialAmount = new BigDecimal(mpesaStkPush.getAmount());
