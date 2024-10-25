@@ -105,15 +105,23 @@ public class MpesaStkPushService {
     }
 
     private void notifyUserAndClient(MpesaStkPushStatusResponse statusResponse, MpesaStkPush mpesaStkPush) {
-        String userMessage = stringService.generateUniqueSmsID()+
-                " Confirmed. We have received KES "
-                + statusResponse.getInvoice().getValue()+" to "
-                + mpesaStkPush.getClientPhoneNumber() +". Approve the payment on your account dashboard";
+//        String userMessage = stringService.generateUniqueSmsID()+
+//                " Confirmed. We have received KES "
+//                + statusResponse.getInvoice().getValue()+" to "
+//                + mpesaStkPush.getClientPhoneNumber() +". Approve the payment on your account dashboard";
+
+        String userMessage = String.format("%s Confirmed. We have received KES %s to %s. Approve the payment on your account dashboard",
+                stringService.generateUniqueSmsID(), statusResponse.getInvoice().getValue(), mpesaStkPush.getClientPhoneNumber());
+
         moveSmsService.sendSMS(mpesaStkPush.getUserPhoneNumber(), userMessage);
 
-        String clientMessage = stringService.generateUniqueSmsID()+ " Confirmed. You have received KES "
-                + statusResponse.getInvoice().getValue()+" from "
-                + mpesaStkPush.getUserPhoneNumber()+ ". You should receive it in your M-Pesa withing minutes";
+        String clientMessage = String.format("%s Confirmed. You have received KES %s from %s. You should receive it in your M-pesa within minutes.",
+                stringService.generateUniqueSmsID(), statusResponse.getInvoice().getValue(), mpesaStkPush.getUserPhoneNumber());
+
+//        String clientMessage = stringService.generateUniqueSmsID()+ " Confirmed. You have received KES "
+//                + statusResponse.getInvoice().getValue()+" from "
+//                + mpesaStkPush.getUserPhoneNumber()+ ". You should receive it in your M-Pesa withing minutes";
+
         moveSmsService.sendSMS(mpesaStkPush.getClientPhoneNumber(), clientMessage);
     }
 

@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-csdnr1o8fa8c73f735ng-a.oregon-postgres.render.com/empire_bicycle_shop_ouu0
-    username: empire_bicycle_shop_ouu0_user
-    password: jNtvQSkm3QyCBgtmuBM6okj2DzqFi0rv
+    url: jdbc:postgresql://dpg-csdqkvd6l47c73dft5jg-a.oregon-postgres.render.com/master_database_di67
+    username: master_database_di67_user
+    password: Iz9eliWjohrwZLmwQHDDKflbohMJFrIf
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
