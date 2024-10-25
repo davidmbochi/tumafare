@@ -4,7 +4,6 @@ import com.tumafare.com.tumafare.role.Role;
 import com.tumafare.com.tumafare.role.RoleRepository;
 import com.tumafare.com.tumafare.user.User;
 import com.tumafare.com.tumafare.user.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
