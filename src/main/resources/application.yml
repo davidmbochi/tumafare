@@ -1,3 +1,5 @@
+
+
 spring:
   application:
     name: tumafare
@@ -45,3 +47,6 @@ movesms:
 africastalking:
   sms:
     api_key: atsk_1b3457ae6c87c7a8e20aa86f236a94a14bf7f4319e690edfeeff8f27b35e583f872053b6
+    
+server:
+  port: 8080
