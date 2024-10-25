@@ -3,26 +3,11 @@ spring:
     name: tumafare
   profiles:
     active: dev
-  mail:
-    host: mail.privateemail.com
-    port: 465
-    username: info@tumafare.com
-    password: "@HUNTERmbo83"
-    properties:
-      mail:
-        smtp:
-          auth: true
-          ssl:
-            enable: true
-            trust: "*"
-        starttls:
-          enable: true
-    protocol: smtp
 #  mail:
-#    host: smtp.gmail.com
+#    host: mail.privateemail.com
 #    port: 465
-#    username: tumafareinfo@gmail.com
-#    password: elnycxurykidupel
+#    username: info@tumafare.com
+#    password: "@HUNTERmbo83"
 #    properties:
 #      mail:
 #        smtp:
@@ -33,6 +18,21 @@ spring:
 #        starttls:
 #          enable: true
 #    protocol: smtp
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: tumafareinfo@gmail.com
+    password: elnycxurykidupel
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            trust: "*"
+        starttls:
+          enable: true
+    protocol: smtp
 
 instasend:
   mpesa:

@@ -18,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+@Table(name = "_role", schema = "public")
 public class Role {
 
     @Id
